@@ -1,0 +1,18 @@
+<div class="container">
+    <form name="formNhap">
+        Tên học sinh: <input type="text" name="ten" ng-model="paymentContent" required>
+        <span ng-show="formNhap.ten.$error.required" style="color: orange;font-size: 12px;font-family: Consolas">Tên không được để trống</span>
+        <!--<button ng-click="dongtien()"></button>-->
+        <br>
+        <br>
+        <img style="cursor: pointer" ng-disabled="formNhap.ten.$error.required" ng-click="dongtien()" src="https://www.baokim.vn/cdn/x_developer/module/baokim_btn/thanhtoanantoan-l.png" alt="Thanh toán an toàn với Bảo Kim !" border="0" title="Thanh toán trực tuyến an toàn dùng tài khoản Ngân hàng (VietcomBank, TechcomBank, Đông Á, VietinBank, Quân Đội, VIB, SHB,... và thẻ Quốc tế (Visa, Master Card...) qua Cổng thanh toán trực tuyến BảoKim.vn" >
+    </form>
+
+    <div class="row">
+        <img ng-src="UET-logo-txt.png" style="display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%; opacity: 0.3"/>
+    </div>
+
+</div>

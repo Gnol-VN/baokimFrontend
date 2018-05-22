@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-init="countries = [{locale:'en-vn', ten:'vn'}]">
+<head>
+    <meta charset="UTF-8">
+    <title>Cổng thanh toán UET-Payment</title>
+    <!--import dau tien-->
+    <!--tweenmax phụ thuộc vào jquery-->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/gsap/src/minified/TweenMax.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="node_modules/moment/moment.js"></script>
+    <script src="node_modules/angular-moment/angular-moment.js"></script>
+
+</head>
+<body>
+
+    <ul>
+        <!--<li><a ui-sref="home">Home</a> </li>-->
+        <!--<li><a ui-sref="feature">Feature</a> </li>-->
+        <!--<li><a ui-sref="about">About</a> </li>-->
+        <!--<li><a ui-sref="form">Form</a> </li>-->
+        <!--<li><a ui-sref="ajax">Ajax</a> </li>-->
+        <!--<li><a ui-sref="plus">Plus</a> </li>-->
+        <!--<li><a ui-sref="tweenMax">TweenMax</a> </li>-->
+        <li ng-show="isLoggedInAdmin"><a ui-sref="baokim">Danh sách giao dịch</a> </li>
+        <li><a ui-sref="dongtien">Đóng tiền</a> </li>
+    </ul>
+    <div ui-view></div>
+
+</body>
+<!--route-->
+<script src="app.js"></script>
+
+<script src="modules/about/about.js"></script>
+<script src="modules/baokim/baokim.js"></script>
+<script src="modules/feature/feature.js"></script>
+<script src="modules/form/form.js"></script>
+<script src="modules/ajax/ajax.js"></script>
+<script src="modules/plus/plus.js"></script>
+<script src="modules/todo/todo.js"></script>
+<script src="modules/tweenMax/tweenMax.js"></script>
+<script src="modules/dongtien/dongtien.js"></script>
+
+<!--controller-->
+<script src="modules/about/aboutCtrl.js"></script>
+<script src="modules/baokim/baokimCtrl.js"></script>
+<script src="modules/feature/featureCtrl.js"></script>
+<script src="modules/form/formCtrl.js"></script>
+<script src="modules/ajax/ajaxCtrl.js"></script>
+<script src="modules/todo/todoCtrl.js"></script>
+<script src="modules/plus/plusCtrl.js"></script>
+<script src="modules/tweenMax/tweenMaxCtrl.js"></script>
+<script src="modules/dongtien/dongtienCtrl.js"></script>
+
+<!--service -->
+<script src="modules/plus/plusService.js"></script>
+<script src="modules/baokim/baokimService.js"></script>
+
+</html>

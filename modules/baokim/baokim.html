@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <button class="btn" ng-click="updateButton()">Cập nhật</button>
+
+    <table id="table">
+        <tr>
+            <td style="width: 90px;">Mã giao dịch</td>
+            <td style="width: 100px;">Thời gian</td>
+            <td style="width: 150px;">Loại giao dịch</td>
+            <td style="width: 140px;">Mã đơn hàng</td>
+            <td style="width: 140px;">Mô tả</td>
+            <td style="width: 150px;">Tên / Email</td>
+            <td style="width: 80px;">Kiểu</td>
+            <td style="width: 100px;">Số tiền</td>
+            <td style="width: 100px;">Số tiền chuyển</td>
+            <td style="width: 85px;">Trạng thái</td>
+        </tr>
+        <tr ng-repeat="record in table|orderBy:orderByField : true">
+            <td>{{ record.maGiaoDich}}</td>
+            <td>{{ record.thoiGian}}</td>
+            <td>{{ record.loaiGiaoDich }}</td>
+            <td>{{ record.maDonHang }}</td>
+            <td>{{ record.mota }}</td>
+            <td>{{ record.tenEmail }}</td>
+            <td>{{ record.kieu }}</td>
+            <td>{{ record.soTien }}</td>
+            <td>{{ record.soTienChuyen }}</td>
+            <td>{{ record.trangThai }}</td>
+
+        </tr>
+    </table>
+</div>

@@ -31,6 +31,7 @@
         <li ng-show="isLoggedInAdmin"><a ui-sref="trangthaihocphi">Trạng thái đóng tiền toàn trường</a> </li>
         <li ng-show="isLoggedInParent"><a ui-sref="trangthaihocphi">Trạng thái đóng tiền của con em</a> </li>
         <li><a ui-sref="dongtien">Đóng tiền</a> </li>
+        <li><a ui-sref="trangthaihocphi">Danh sách sinh viên</a></li>
         <li ng-show="isLoggedInStaff||isLoggedInParent||isLoggedInAdmin"><a href="#" ng-click="logOut()" >Log out</a> </li>
     </ul>
     <div ui-view></div>
@@ -68,5 +69,6 @@
 <script src="modules/plus/plusService.js"></script>
 <script src="modules/baokim/baokimService.js"></script>
 <script src="modules/login/loginService.js"></script>
+<script src="modules/trangthaihocphi/trangthaihocphiService.js"></script>
 
 </html>

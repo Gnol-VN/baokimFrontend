@@ -41,34 +41,35 @@ angular.module('loginModule')
             }
             if($scope.loginAs == "Parent"){
                 var request = {
-                    parentName:$scope.logging.name,
-                    parentPassword: $scope.logging.password
+                    email:$scope.logging.name,
+                    password: $scope.logging.password
                 };
-                loginService.parentLogin(request)
-                    .then(function (response) {
-                        $scope.token = response.data.token;
-                        localStorage.setItem("token", $scope.token);
-                        $rootScope.token = response.data.token;
-                        $rootScope.displayName = response.data.parentName;
-                        localStorage.setItem('displayName',response.data.parentName);
-                        localStorage.setItem('loggedAsParent',true);
-                        localStorage.setItem('loggedAsStaff',false);
-                        $rootScope.loggedAsStaff = false;
-                        $rootScope.loggedAsParent = true;
-                        $rootScope.displayName = localStorage['displayName'];
-                        $rootScope.token = localStorage['token'];
-                        $rootScope.$broadcast("someEvent", $rootScope.getRole());
+                $http({
+                    url: 'http://localhost/school1/index.php?login/ajax_login',
+                    method: 'POST',
+                    data: $httpParamSerializerJQLike(request),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                }).then(function (response) {
+                    console.log(response);
+                    $scope.token = response.data.token;
+                    localStorage.setItem("token", $scope.token);
+                    $rootScope.token = response.data.token;
+                    $rootScope.displayName = response.data.profile.name;
+                    localStorage.setItem('displayName',response.data.profile.name);
+                    localStorage.setItem('loggedAsAdmin',false);
+                    localStorage.setItem('loggedAsParent',true);
+                    localStorage.setItem('loggedAsStaff',false);
+                    $rootScope.loggedAsAdmin = false;
+                    $rootScope.loggedAsStaff = false;
+                    $rootScope.loggedAsParent = true;
+                    $rootScope.displayName = localStorage['displayName'];
+                    $rootScope.token = localStorage['token'];
+                    $rootScope.$broadcast("someEvent", $rootScope.getRole());
 
-                        $state.go('welcomeParent');
-
-                    },function (error,data) {
-                            console.log(error.data.message);
-                            $scope.errorMessage = error.data.message;
-                            // $scope.showErrorModel(error.data.message);
-                            localStorage.clear()
-                        }
-                    )
-                ;
+                    $state.go('trangthaihocphi');
+                });
             }
             if($scope.loginAs == "Staff"){
                 var request = {

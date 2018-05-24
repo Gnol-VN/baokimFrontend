@@ -9,7 +9,8 @@ angular.module('app', ['ui.router',
     'baokimModule',
     'dongtienModule',
     'loginModule',
-    'angularMoment'
+    'angularMoment',
+    'trangthaihocphiModule'
     ])
     .run(function($rootScope, $state) {
         $rootScope.displayName=localStorage['displayName'];

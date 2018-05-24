@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-md-5 col-md-offset-7">
+        <div class="panel panel-default">
+            <div class="panel-heading"> <span class="glyphicon glyphicon-lock"></span> Đăng nhập</div>
+            <div class="panel-body">
+                <form class="form-horizontal" role="form" name="formNhap">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label"> Username</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control"  placeholder="Tên đăng nhập" name="ten" ng-model="logging.name" required>
+                            <span ng-show="formNhap.ten.$error.required">Vui lòng nhập tên đăng nhập</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-sm-3 control-label"> Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Mật khẩu" name="meo" ng-model="logging.password" required>
+                            <span ng-show="formNhap.meo.$error.required">Vui lòng nhập password</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <label>
+                                <input type="radio" name="option" ng-model="loginAs"
+                                       value="Admin"> Admin
+                                <input type="radio" name="option" ng-model="loginAs"
+                                       value="Staff"> Staff
+                                <input type="radio" name="option" ng-model="loginAs"
+                                       value="Parent" ng-checked="!loginAs"> Parent
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group last">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button ng-click="login()" ng-disabled="formNhap.$invalid" class="btn btn-success btn-sm">Đăng nhập</button>
+                            <a href="http://uet.vnu.edu.vn"><button type="reset" class="btn btn-default btn-sm"> Quên mật khẩu</button></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer"> Bạn chưa có tài khoản ? <a ui-sref="register">Đăng ký</a></div>
+        </div>
+    </div>
+</div>
+<div>
+
+
+</div>

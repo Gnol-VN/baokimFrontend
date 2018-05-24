@@ -22,14 +22,14 @@ angular.module('baokimModule')
         }
         function getTable() {
             return $http({
-                url:'http://192.168.1.105:8080/getrecord',
+                url:'http://localhost:8081/getrecord',
                 method:'GET'
 
             })
         }
         function updateTable() {
             return $http({
-                url:'http://192.168.1.105:8080/updaterecord',
+                url:'http://localhost:8081/updaterecord',
                 method:'GET'
 
             })

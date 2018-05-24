@@ -26,9 +26,10 @@
         <!--<li><a ui-sref="form">Form</a> </li>-->
         <!--<li><a ui-sref="ajax">Ajax</a> </li>-->
         <!--<li><a ui-sref="plus">Plus</a> </li>-->
-        <!--<li><a ui-sref="tweenMax">TweenMax</a> </li>-->
-        <li ng-show="isLoggedInAdmin"><a ui-sref="baokim">Danh sách giao dịch</a> </li>
+        <li><a ui-sref="login">Đăng nhập</a> </li>
+        <li ng-show="isLoggedInAdmin"><a ui-sref="baokim">Lịch sử giao dịch</a> </li>
         <li><a ui-sref="dongtien">Đóng tiền</a> </li>
+        <li ng-show="isLoggedInStaff||isLoggedInParent||isLoggedInAdmin"><a href="#" ng-click="logOut()" >Log out</a> </li>
     </ul>
     <div ui-view></div>
 
@@ -45,6 +46,7 @@
 <script src="modules/todo/todo.js"></script>
 <script src="modules/tweenMax/tweenMax.js"></script>
 <script src="modules/dongtien/dongtien.js"></script>
+<script src="modules/login/login.js"></script>
 
 <!--controller-->
 <script src="modules/about/aboutCtrl.js"></script>
@@ -56,9 +58,11 @@
 <script src="modules/plus/plusCtrl.js"></script>
 <script src="modules/tweenMax/tweenMaxCtrl.js"></script>
 <script src="modules/dongtien/dongtienCtrl.js"></script>
+<script src="modules/login/loginCtrl.js"></script>
 
 <!--service -->
 <script src="modules/plus/plusService.js"></script>
 <script src="modules/baokim/baokimService.js"></script>
+<script src="modules/login/loginService.js"></script>
 
 </html>

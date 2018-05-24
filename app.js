@@ -8,6 +8,7 @@ angular.module('app', ['ui.router',
     'tweenMaxModule',
     'baokimModule',
     'dongtienModule',
+    'loginModule',
     'angularMoment'
     ])
     .run(function($rootScope, $state) {

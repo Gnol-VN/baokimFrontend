@@ -13,19 +13,19 @@ angular.module('loginModule')
                     password: $scope.logging.password
                 };
                 $http({
-                    url: 'http://localhost/school1/index.php?login/ajax_login',
+                    url: 'http://localhost:80/school1/index.php?login/ajax_login',
                     method: 'POST',
                     data: $httpParamSerializerJQLike(request),
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 }).then(function (response) {
-                    console.log(response)
+                    console.log(response);
                     $scope.token = response.data.token;
                     localStorage.setItem("token", $scope.token);
                     $rootScope.token = response.data.token;
-                    $rootScope.displayName = response.data.profile.name;
-                    localStorage.setItem('displayName',response.data.parentName);
+                    $rootScope.displayName = "Admin";
+                    localStorage.setItem('displayName',"Admin");
                     localStorage.setItem('loggedAsAdmin',true);
                     localStorage.setItem('loggedAsParent',false);
                     localStorage.setItem('loggedAsStaff',false);
@@ -45,7 +45,7 @@ angular.module('loginModule')
                     password: $scope.logging.password
                 };
                 $http({
-                    url: 'http://localhost/school1/index.php?login/ajax_login',
+                    url: 'http://localhost:80/school1/index.php?login/ajax_login',
                     method: 'POST',
                     data: $httpParamSerializerJQLike(request),
                     headers: {

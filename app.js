@@ -10,8 +10,10 @@ angular.module('app', ['ui.router',
     'dongtienModule',
     'loginModule',
     'angularMoment',
-    'trangthaihocphiModule'
-    ])
+    'trangthaihocphiModule',
+    'angular-loading-bar'
+
+])
     .run(function($rootScope, $state) {
         $rootScope.displayName=localStorage['displayName'];
         $rootScope.isLoggedInAdmin = false;

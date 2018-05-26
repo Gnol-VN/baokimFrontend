@@ -10,22 +10,23 @@
 .card{
     position: absolute;
 }
-#table {
+.tablebaokim {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    font-size: 12px
 }
 
-#table td, #table th {
+.tablebaokim td, .tablebaokim th {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-#table tr:nth-child(even){background-color: #f2f2f2;}
+.tablebaokim tr:nth-child(even){background-color: #f2f2f2;}
 
-#table tr:hover {background-color: #ddd;}
+.tablebaokim tr:hover {background-color: #ddd;}
 
-#table th {
+.tablebaokim th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;

@@ -1,5 +1,6 @@
-<div>
-    <table id="paymenttable">
+<div ng-show="isLoggedInAdmin">
+    <table class="tablebaokim" >
+
         <tr>
             <th>Tên học sinh</th>
             <th>Mã lớp</th>
@@ -8,7 +9,28 @@
             <th>Tên phụ huynh</th>
             <th>Trạng thái đóng tiền</th>
         </tr>
-        <tr ng-repeat = "student in paymentList">
+        <tr ng-repeat = "student in adminPaymentList">
+            <td>{{student.studentName}}</td>
+            <td>{{student.classId}}</td>
+            <td>{{student.className}}</td>
+            <td>{{student.parentId}}</td>
+            <td>{{student.parentName}}</td>
+            <td>{{student.paymentStatus}}</td>
+        </tr>
+    </table>
+</div>
+<div ng-show="isLoggedInParent">
+    <table class="tablebaokim" >
+
+        <tr>
+            <th>Tên học sinh</th>
+            <th>Mã lớp</th>
+            <th>Tên lớp</th>
+            <th>Mã phụ huynh</th>
+            <th>Tên phụ huynh</th>
+            <th>Trạng thái đóng tiền</th>
+        </tr>
+        <tr ng-repeat = "student in parentPaymentList">
             <td>{{student.studentName}}</td>
             <td>{{student.classId}}</td>
             <td>{{student.className}}</td>

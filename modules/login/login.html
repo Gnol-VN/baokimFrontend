@@ -5,10 +5,10 @@
             <div class="panel-body">
                 <form class="form-horizontal" role="form" name="formNhap">
                     <div class="form-group">
-                        <label class="col-sm-3 control-label"> Username</label>
+                        <label class="col-sm-3 control-label"> Email</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control"  placeholder="Tên đăng nhập" name="ten" ng-model="logging.name" required>
-                            <span ng-show="formNhap.ten.$error.required">Vui lòng nhập tên đăng nhập</span>
+                            <span ng-show="formNhap.ten.$error.required">Vui lòng nhập email</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -23,10 +23,10 @@
                             <label>
                                 <input type="radio" name="option" ng-model="loginAs"
                                        value="Admin"> Admin
+                                <!--<input type="radio" name="option" ng-model="loginAs"-->
+                                       <!--value="Staff"> Staff-->
                                 <input type="radio" name="option" ng-model="loginAs"
-                                       value="Staff"> Staff
-                                <input type="radio" name="option" ng-model="loginAs"
-                                       value="Parent" ng-checked="!loginAs"> Parent
+                                       value="Parent" ng-checked="!loginAs"> Phụ huynh
                             </label>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                     </div>
                 </form>
             </div>
-            <div class="panel-footer"> Bạn chưa có tài khoản ? <a ui-sref="register">Đăng ký</a></div>
+            <!--<div class="panel-footer"> Bạn chưa có tài khoản ? <a ui-sref="register">Đăng ký</a></div>-->
         </div>
     </div>
 </div>

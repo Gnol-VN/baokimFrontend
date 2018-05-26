@@ -15,26 +15,37 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <script src="node_modules/moment/moment.js"></script>
     <script src="node_modules/angular-moment/angular-moment.js"></script>
+    <script src="node_modules/angular-loading-bar/build/loading-bar.js"></script>
+    <link rel="stylesheet" href="node_modules/angular-loading-bar/build/loading-bar.css">
 
 </head>
 <body>
+    <div class="container">
 
-    <ul>
-        <!--<li><a ui-sref="home">Home</a> </li>-->
-        <!--<li><a ui-sref="feature">Feature</a> </li>-->
-        <!--<li><a ui-sref="about">About</a> </li>-->
-        <!--<li><a ui-sref="form">Form</a> </li>-->
-        <!--<li><a ui-sref="ajax">Ajax</a> </li>-->
-        <!--<li><a ui-sref="plus">Plus</a> </li>-->
-        <li><a ui-sref="login">Đăng nhập</a> </li>
-        <li ng-show="isLoggedInAdmin"><a ui-sref="baokim">Lịch sử giao dịch</a> </li>
-        <li ng-show="isLoggedInAdmin"><a ui-sref="trangthaihocphi">Trạng thái đóng tiền toàn trường</a> </li>
-        <li ng-show="isLoggedInParent"><a ui-sref="trangthaihocphi">Trạng thái đóng tiền của con em</a> </li>
-        <li><a ui-sref="dongtien">Đóng tiền</a> </li>
-        <li><a ui-sref="trangthaihocphi">Danh sách sinh viên</a></li>
-        <li ng-show="isLoggedInStaff||isLoggedInParent||isLoggedInAdmin"><a href="#" ng-click="logOut()" >Log out</a> </li>
-    </ul>
-    <div ui-view></div>
+        <div class="row">
+            <div class="col-xs-9 offset-xs-3"></div>
+            <div class="col-xs-3 offset-xs-3" ng-show="isLoggedInStaff||isLoggedInParent||isLoggedInAdmin">Xin chào, {{displayName}}</div>
+        </div>
+        <div class="row">
+
+            <ul>
+                <!--<li><a ui-sref="home">Home</a> </li>-->
+                <!--<li><a ui-sref="feature">Feature</a> </li>-->
+                <!--<li><a ui-sref="about">About</a> </li>-->
+                <!--<li><a ui-sref="form">Form</a> </li>-->
+                <!--<li><a ui-sref="ajax">Ajax</a> </li>-->
+                <!--<li><a ui-sref="plus">Plus</a> </li>-->
+                <li ng-hide="isLoggedInStaff||isLoggedInParent||isLoggedInAdmin"><a ui-sref="login">Đăng nhập</a> </li>
+                <li ng-show="isLoggedInAdmin"><a ui-sref="baokim">Lịch sử giao dịch</a> </li>
+                <li ng-show="isLoggedInAdmin"><a ui-sref="trangthaihocphi">Trạng thái đóng tiền toàn trường</a> </li>
+                <li ng-show="isLoggedInParent"><a ui-sref="trangthaihocphi">Trạng thái đóng tiền của con em</a> </li>
+                <li ng-show="isLoggedInParent"><a ui-sref="dongtien">Đóng tiền</a> </li>
+                <li ng-show="isLoggedInStaff||isLoggedInParent||isLoggedInAdmin"><a href="#" ng-click="logOut()" >Log out</a> </li>
+            </ul>
+        </div>
+        <div ui-view class="row"></div>
+    </div>
+
 
 </body>
 <!--route-->

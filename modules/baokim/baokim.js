@@ -8,7 +8,7 @@ angular.module('baokimModule', ['ui.router',])
                 templateUrl: 'modules/baokim/baokim.html', //Đường dẫn view: modules/about/about.html
                 controller: 'baokimController',
                 resolve:{
-                    initialTable:['baokimService', function (baokimService) {
+                    bangGiaoDich:['baokimService', function (baokimService) {
                         return baokimService.getTable()
                             .then(function (response) {
                                 return response.data;
